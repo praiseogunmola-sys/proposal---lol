@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ismail </title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* TEXTURED BACKGROUND */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity: 0.4;
+    z-index: -1;
+  }
+
+  /* FLOATING BLURRED ORBS */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -2;
+    animation: moveOrb 10s infinite alternate;
+  }
+  .orb-1 { width: 300px; height: 300px; background: #ff758c; top: 10%; left: 10%; }
+  .orb-2 { width: 400px; height: 400px; background: #6a11cb; bottom: 10%; right: 10%; }
+
+  @keyframes moveOrb {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 50px); }
+  }
+
+  .container {
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.8s ease forwards;
+  }
+  
+  .slide.active { display: flex; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* MEDIA STYLING */
+  .media-container {
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.1);
+  }
+  
+  img, video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+
+  h1 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 10px; line-height: 1.2; }
+  p { font-size: 16px; color: #eee; line-height: 1.6; margin-bottom: 20px; }
+
+  button {
+    padding: 15px 40px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-top: 10px;
+  }
+  
+  button:hover { transform: scale(1.05); background: #ff758c; color: white; }
+
+  .cute {
+    color: #ff758c;
+    font-style: italic;
+    font-size: 14px;
+  }
+
+  .sassy-text {
+    color: #ff758c;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: block;
+    animation: popIn 0.5s ease-out 0.5s forwards;
+    opacity: 0;
+  }
+
+  @keyframes popIn {
+    to { opacity: 1; transform: scale(1); }
+  }
+
+</style>
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<div class="container">
+
+  <div class="slide active">
+    <div class="media-container">
+      <img src="his-pic.jpg" alt="Ismail" onerror="this.src='https://media.giphy.com/media/3o7TKsS70Xuw9O3Y9W/giphy.gif'"> 
+    </div>
+    <h1>Hey, Ismail </h1>
+    <p>It's been 3 months and 3 weeks since we last saw each other, and I've honestly been looking forward to seeing you again </p>
+    <button onclick="nextSlide()">Next </button>
+  </div>
+
+  <div class="slide">
+    <div class="media-container">
+      <img src="meme1.jpg" alt="Meme" onerror="this.src='https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif'">
+    </div>
+    <p>This proposal isn’t really about plans, it’s about my intentions towards you during your stay.</p>
+    <button onclick="nextSlide()">Next </button>
+  </div>
+
+  <div class="slide">
+    <div class="media-container">
+      <img src="meme2.jpg" alt="Meme" onerror="this.src='https://media.giphy.com/media/l0HlCqV35hdEg2PN6/giphy.gif'">
+    </div>
+    <p>I can't wait to explore the chemistry we already know exists, and act out everything we've said to each other over text. </p>
+    <button onclick="nextSlide()">Next </button>
+  </div>
+
+  <div class="slide">
+    <div class="media-container">
+      <img src="meme3.jpg" alt="Meme" onerror="this.src='https://media.giphy.com/media/l0HlIDUadR62K3uV6/giphy.gif'">
+    </div>
+    <p>This visit isn't just about me taking advantage of you  — we can go out, hit the cinema, I can show you around my school, or we can just have fun together </p>
+    <button onclick="nextSlide()">Next </button>
+  </div>
+
+  <div class="slide">
+    <div class="media-container">
+      <img src="meme4.jpg" alt="Meme" onerror="this.src='https://media.giphy.com/media/3o7TKVUn7iM8FMEU24/giphy.gif'">
+    </div>
+    <p>Honestly, I just want to see your face, and maybe sit on it  <br><span class="cute">hehe</span></p>
+    <button onclick="nextSlide()">Next </button>
+  </div>
+
+  <div class="slide">
+    <div class="media-container">
+       <img src="question-meme.jpg" alt="Waiting" onerror="this.src='https://media.giphy.com/media/l41lTfuxVpB0h89MY/giphy.gif'">
+    </div>
+    <h1>Soooo.....fine boy</h1>
+    <p>Would you like to come?</p>
+    <div style="display: flex; gap: 10px; justify-content: center;">
+      <button onclick="finish()">Yes</button>
+      <button onclick="finish()">Yesssss</button>
+    </div>
+  </div>
+
+  <div class="slide" id="finalSlide">
+    <div class="media-container">
+      <video autoplay loop muted playsinline>
+        <source src="final-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <h1>It's a date </h1>
+    
+    <p class="sassy-text">Not like you had a choice </p>
+    
+    <p>Dates: 20–22 February 2026</p>
+    <p>I’ll send you the mailer in 2 business days with things to bring and all the visit details </p>
+  </div>
+
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const music = document.getElementById('bgMusic');
+
+  function nextSlide() {
+    if (currentSlide === 0) {
+      music.play().catch(e => console.log("Music blocked until interaction"));
+    }
+
+    slides[currentSlide].classList.remove('active');
+    currentSlide++;
+    if (currentSlide < slides.length) {
+      slides[currentSlide].classList.add('active');
+    }
+  }
+
+  function finish() {
+    slides[currentSlide].classList.remove('active');
+    document.getElementById('finalSlide').classList.add('active');
+  }
+</script>
+
+</body>
+</html>
