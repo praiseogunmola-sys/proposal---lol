@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Ismail </title>
+<title>For Ismail &#10084;&#65039;</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
 <style>
   body {
     margin: 0;
     padding: 0;
-    background-color: #111;
+    /* TRUE MATTE BLACK */
+    background-color: #0a0a0a; 
     color: white;
     font-family: 'Inter', sans-serif;
     height: 100vh;
@@ -20,30 +21,32 @@
     position: relative;
   }
 
-  /* TEXTURED BACKGROUND */
+  /* GRAIN & CARBON TEXTURE OVERLAY */
   body::before {
     content: "";
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-    opacity: 0.4;
-    z-index: -1;
+    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+    opacity: 0.2;
+    z-index: 1;
+    pointer-events: none;
   }
 
-  /* FLOATING BLURRED ORBS */
+  /* SUBTLE MOOD LIGHTING (ORBS) */
   .orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    z-index: -2;
-    animation: moveOrb 10s infinite alternate;
+    filter: blur(100px);
+    z-index: 0;
+    animation: moveOrb 15s infinite alternate ease-in-out;
+    opacity: 0.3; /* Kept very dim for the "Black" vibe */
   }
-  .orb-1 { width: 300px; height: 300px; background: #ff758c; top: 10%; left: 10%; }
-  .orb-2 { width: 400px; height: 400px; background: #6a11cb; bottom: 10%; right: 10%; }
+  .orb-1 { width: 350px; height: 350px; background: #333; top: -10%; left: -10%; }
+  .orb-2 { width: 450px; height: 450px; background: #1a1a1a; bottom: -10%; right: -10%; }
 
   @keyframes moveOrb {
     0% { transform: translate(0, 0); }
-    100% { transform: translate(30px, 50px); }
+    100% { transform: translate(50px, 80px); }
   }
 
   .container {
@@ -58,26 +61,26 @@
     display: none;
     flex-direction: column;
     align-items: center;
-    animation: fadeIn 0.8s ease forwards;
+    animation: fadeIn 1s ease forwards;
   }
   
   .slide.active { display: flex; }
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   /* MEDIA STYLING */
   .media-container {
     width: 100%;
-    height: 250px;
-    border-radius: 20px;
+    height: 260px;
+    border-radius: 15px;
     overflow: hidden;
-    margin-bottom: 20px;
-    border: 2px solid rgba(255,255,255,0.2);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    background: rgba(255,255,255,0.1);
+    margin-bottom: 25px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    background: #111;
   }
   
   img, video {
@@ -86,44 +89,40 @@
     object-fit: cover; 
   }
 
-  h1 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 10px; line-height: 1.2; }
-  p { font-size: 16px; color: #eee; line-height: 1.6; margin-bottom: 20px; }
+  h1 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 12px; letter-spacing: -0.5px; }
+  p { font-size: 16px; color: #bbb; line-height: 1.7; margin-bottom: 25px; padding: 0 15px; font-weight: 300; }
 
   button {
-    padding: 15px 40px;
-    background: white;
-    color: black;
+    padding: 16px 45px;
+    background: #fff;
+    color: #000;
     border: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 16px;
+    border-radius: 4px; /* More "Bookish" square-ish corners */
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: transform 0.2s;
-    margin-top: 10px;
+    transition: all 0.3s;
   }
   
-  button:hover { transform: scale(1.05); background: #ff758c; color: white; }
+  button:hover { background: #ff758c; color: white; transform: translateY(-2px); }
 
-  .cute {
-    color: #ff758c;
-    font-style: italic;
-    font-size: 14px;
-  }
+  .cute { color: #888; font-style: italic; font-size: 13px; }
 
   .sassy-text {
     color: #ff758c;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 18px;
     margin-bottom: 15px;
     display: block;
-    animation: popIn 0.5s ease-out 0.5s forwards;
+    animation: popIn 0.5s ease-out 0.8s forwards;
     opacity: 0;
   }
 
   @keyframes popIn {
     to { opacity: 1; transform: scale(1); }
   }
-
 </style>
 </head>
 <body>
@@ -141,48 +140,48 @@
     <div class="media-container">
       <img src="his-pic.jpg" alt="Ismail" onerror="this.src='https://media.giphy.com/media/3o7TKsS70Xuw9O3Y9W/giphy.gif'"> 
     </div>
-    <h1>Hey, Ismail </h1>
-    <p>They say some stories are written in the stars, but I'd rather write ours in person. It's been 3 months and 3 weeks since we last saw each other, and I've honestly been looking forward to seeing you again </p>
-    <button onclick="nextSlide()">Next </button>
+    <h1>Hey, Ismail &#10084;&#65039;</h1>
+    <p>They say some stories are written in the stars, but I'd rather write ours in person. It's been 3 months and 3 weeks, and I've been looking forward to seeing you again &#129505;</p>
+    <button onclick="nextSlide()">Begin &#10145;&#65039;</button>
   </div>
 
   <div class="slide">
     <div class="media-container">
       <img src="meme1.jpg" alt="Meme" onerror="this.src='https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif'">
     </div>
-    <p>This proposal isn’t really about plans, it’s about my intentions towards you during your stay.</p>
-    <button onclick="nextSlide()">Next </button>
+    <p>This proposal isn’t really about plans; it’s about my intentions towards you during your stay.</p>
+    <button onclick="nextSlide()">Next &#10145;&#65039;</button>
   </div>
 
   <div class="slide">
     <div class="media-container">
       <img src="meme2.jpg" alt="Meme" onerror="this.src='https://media.giphy.com/media/l0HlCqV35hdEg2PN6/giphy.gif'">
     </div>
-    <p>I can't wait to explore the chemistry we already know exists, and act out everything we've said to each other over text. </p>
-    <button onclick="nextSlide()">Next </button>
+    <p>I can't wait to explore the chemistry we already know exists, and act out everything we've said to each other over text &#129293;&#129293;</p>
+    <button onclick="nextSlide()">Next &#10145;&#65039;</button>
   </div>
 
   <div class="slide">
     <div class="media-container">
       <img src="meme3.jpg" alt="Meme" onerror="this.src='https://media.giphy.com/media/l0HlIDUadR62K3uV6/giphy.gif'">
     </div>
-    <p>This visit isn't just about me taking advantage of you ; we can go out, hit the cinema, I can show you around my school, or we can just have fun together </p>
-    <button onclick="nextSlide()">Next </button>
+    <p>This visit isn't just about me taking advantage of you &#128541;; we can go out, hit the cinema, or I can show you around my school. We're going to have fun together &#128537;</p>
+    <button onclick="nextSlide()">Next &#10145;&#65039;</button>
   </div>
 
   <div class="slide">
     <div class="media-container">
       <img src="meme4.jpg" alt="Meme" onerror="this.src='https://media.giphy.com/media/3o7TKVUn7iM8FMEU24/giphy.gif'">
     </div>
-    <p>Honestly, I just want to see your face, and maybe sit on it , I promise I won't leave you 'Broken' though... unless you want to be. <br><span class="cute">hehe</span></p>
-    <button onclick="nextSlide()">Next </button>
+    <p>Honestly, I just want to see your face, and maybe sit on it &#129325;. I promise I won't leave you 'Broken' though... unless you want to be. <br><span class="cute">hehe</span></p>
+    <button onclick="nextSlide()">Next &#10145;&#65039;</button>
   </div>
 
   <div class="slide">
     <div class="media-container">
        <img src="question-meme.jpg" alt="Waiting" onerror="this.src='https://media.giphy.com/media/l41lTfuxVpB0h89MY/giphy.gif'">
     </div>
-    <h1>Soooo.....fine boy</h1>
+    <h1>Soooo... fine boy</h1>
     <p>Would you like to come?</p>
     <div style="display: flex; gap: 10px; justify-content: center;">
       <button onclick="finish()">Yes</button>
@@ -196,13 +195,10 @@
         <source src="final-video.mp4" type="video/mp4">
       </video>
     </div>
-    
-    <h1>It's a date </h1>
-    
-    <p class="sassy-text">Not like you had a choice </p>
-    
+    <h1>It's a date &#128541;&#127881;</h1>
+    <p class="sassy-text">Not like you had a choice &#129325;&#129325;</p>
     <p>Dates: 20–22 February 2026</p>
-    <p>I’ll send you the mailer in 2 business days with things to bring and all the visit details </p>
+    <p>I’ll send you the mailer in 2 business days with the visit details &#129466;&#129325;</p>
   </div>
 
 </div>
@@ -213,10 +209,9 @@
   const music = document.getElementById('bgMusic');
 
   function nextSlide() {
-    if (currentSlide === 0) {
-      music.play().catch(e => console.log("Music blocked until interaction"));
+    if (currentSlide === 0 && music) {
+      music.play().catch(e => console.log("Music blocked"));
     }
-
     slides[currentSlide].classList.remove('active');
     currentSlide++;
     if (currentSlide < slides.length) {
